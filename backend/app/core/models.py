@@ -14,3 +14,17 @@ class Action:
     """Action that can be performed by a player."""
     type: str
     parameters: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class Observation:
+    """Observation for one player."""
+    player_id: str
+    game_data: dict[str, Any]
+    legal_actions: list[Action]
+
+
+@dataclass
+class GameState:
+    current_player_id: str | None
+    is_terminal: bool = False
