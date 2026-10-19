@@ -3,10 +3,11 @@ from app.core.models import Action, GameState, Observation, Player
 from app.games.poker.engine import PokerEngine
 
 PLAYERS = [
-        Player(id="1", name="Alice"),
-        Player(id="2", name="Bob"),
-        Player(id="3", name="Charlie"),
-    ]
+    Player(id="1", name="Alice"),
+    Player(id="2", name="Bob"),
+    Player(id="3", name="Charlie"),
+]
+
 
 def test_random_agent_plays_poker():
     engine = PokerEngine(players=PLAYERS)
@@ -24,14 +25,10 @@ def test_random_agent_plays_poker():
     assert new_state != state
 
 
-
 def random_agent_can_play_complete_hand():
     engine = PokerEngine(players=PLAYERS)
 
-    agents = {
-        player.id: RandomAgent(seed = i)
-        for i,player in enumerate(PLAYERS)
-    }
+    agents = {player.id: RandomAgent(seed=i) for i, player in enumerate(PLAYERS)}
 
     state: GameState = engine.reset()
 
@@ -39,7 +36,9 @@ def random_agent_can_play_complete_hand():
     max_actions = 1000
 
     while not state.is_terminal:
-        assert actions_count < max_actions, f"Game did not terminate after {max_actions} actions"
+        assert actions_count < max_actions, (
+            f"Game did not terminate after {max_actions} actions"
+        )
 
         player_id: str | None = state.current_player_id
         assert player_id is not None

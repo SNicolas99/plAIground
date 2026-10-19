@@ -13,9 +13,9 @@ class GameOrchestrator:
     """
 
     def __init__(
-            self,
-            engine: GameEngine,
-            agents: dict[str, Agent],
+        self,
+        engine: GameEngine,
+        agents: dict[str, Agent],
     ) -> None:
         """
         Initializes the GameOrchestrator with the given engine and agents.

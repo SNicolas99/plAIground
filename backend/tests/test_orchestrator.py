@@ -15,10 +15,7 @@ PLAYERS = [
 def test_orchestrator_initialization():
     engine = PokerEngine(players=PLAYERS)
 
-    agents = {
-        player.id: RandomAgent(seed=i)
-        for i, player in enumerate(PLAYERS)
-    }
+    agents = {player.id: RandomAgent(seed=i) for i, player in enumerate(PLAYERS)}
 
     orchestrator = GameOrchestrator(
         engine=engine,
@@ -40,10 +37,7 @@ def create_orchestrator() -> GameOrchestrator:
     """Helper function to create a GameOrchestrator with default parameters."""
     engine = PokerEngine(players=PLAYERS)
 
-    agents = {
-        player.id: RandomAgent(seed=i)
-        for i, player in enumerate(PLAYERS)
-    }
+    agents = {player.id: RandomAgent(seed=i) for i, player in enumerate(PLAYERS)}
 
     return GameOrchestrator(engine=engine, agents=agents)
 
@@ -83,10 +77,7 @@ def test_play_game():
     assert sum(poker_state.stacks) == 300
 
 
-@pytest.mark.parametrize(
-    "max_turns",
-    [0, -1, -100]
-)
+@pytest.mark.parametrize("max_turns", [0, -1, -100])
 def test_play_game_invalid_max_turns(max_turns):
     orchestrator = create_orchestrator()
 
