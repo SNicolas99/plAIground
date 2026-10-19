@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
 from app.core.models import (
-Action,
-GameState,
-Observation,
+    Action,
+    GameState,
+    Observation,
 )
 
 
@@ -24,7 +24,6 @@ class GameEngine(ABC):
         """
         pass
 
-
     @abstractmethod
     def get_state(self) -> GameState:
         """
@@ -36,15 +35,15 @@ class GameEngine(ABC):
         pass
 
     @abstractmethod
-    def get_observation(            self,            player_id: str   ) -> Observation:
+    def get_observation(self, player_id: str) -> Observation:
         """
-        Get the observation for a specific player.
+        Get the observation for a specific players.
 
         Args:
-            player_id (str): The ID of the player.
+            player_id (str): The ID of the players.
 
         Returns:
-            Observation: The observation for the specified player.
+            Observation: The observation for the specified players.
         """
         pass
 
