@@ -31,3 +31,11 @@ class Observation:
 class GameState:
     current_player_id: str | None
     is_terminal: bool = False
+
+
+@dataclass(frozen=True)
+class TurnRecord:
+    turn_number: int
+    player_id: str
+    action: Action
+    is_terminal: bool
