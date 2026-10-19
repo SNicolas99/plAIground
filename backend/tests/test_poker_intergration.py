@@ -1,5 +1,5 @@
 from app.agents.random_agent import RandomAgent
-from app.core.models import Action, Player, GameState, Observation
+from app.core.models import Action, GameState, Observation, Player
 from app.games.poker.engine import PokerEngine
 
 PLAYERS = [

@@ -1,9 +1,9 @@
 from typing import Any
 
-from pokerkit import Automation, State, NoLimitTexasHoldem
+from pokerkit import Automation, NoLimitTexasHoldem, State
 
 from app.core.interfaces import GameEngine
-from app.core.models import Player, Action, Observation, GameState
+from app.core.models import Action, GameState, Observation, Player
 
 AUTOMATIONS = (
     Automation.ANTE_POSTING,
