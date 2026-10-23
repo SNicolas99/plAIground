@@ -22,7 +22,7 @@ class GameEngine(ABC):
         Returns:
             GameState: The initial state of the game.
         """
-        pass
+        ...
 
     @abstractmethod
     def get_state(self) -> GameState:
@@ -32,7 +32,7 @@ class GameEngine(ABC):
         Returns:
             GameState: The current state of the game.
         """
-        pass
+        ...
 
     @abstractmethod
     def get_observation(self, player_id: str) -> Observation:
@@ -45,7 +45,7 @@ class GameEngine(ABC):
         Returns:
             Observation: The observation for the specified players.
         """
-        pass
+        ...
 
     @abstractmethod
     def step(self, action: Action) -> GameState:
@@ -58,7 +58,7 @@ class GameEngine(ABC):
         Returns:
             GameState: The updated state of the game.
         """
-        pass
+        ...
 
 
 class Agent(ABC):
@@ -77,4 +77,4 @@ class Agent(ABC):
         Returns:
             Action: The action decided by the agent.
         """
-        pass
+        ...

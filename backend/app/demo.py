@@ -13,10 +13,7 @@ def main() -> None:
 
     engine = PokerEngine(players=players)
 
-    agents = {
-        player.id: RandomAgent(seed=i)
-        for i, player in enumerate(players)
-    }
+    agents = {player.id: RandomAgent(seed=i) for i, player in enumerate(players)}
 
     orchestrator = GameOrchestrator(engine=engine, agents=agents)
     final_state = orchestrator.play_game()

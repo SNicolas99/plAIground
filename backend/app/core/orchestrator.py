@@ -13,9 +13,9 @@ class GameOrchestrator:
     """
 
     def __init__(
-            self,
-            engine: GameEngine,
-            agents: dict[str, Agent],
+        self,
+        engine: GameEngine,
+        agents: dict[str, Agent],
     ) -> None:
         """
         Initializes the GameOrchestrator with the given engine and agents.
@@ -66,7 +66,7 @@ class GameOrchestrator:
         agent: Agent = self.agents[player_id]
 
         # Given the player's ID, get their observation
-        observation: Observation = self.engine.get_observation(player_id)  #
+        observation: Observation = self.engine.get_observation(player_id)
 
         # Ask the agent for their action based on the observation
         action: Action = agent.act(observation)
